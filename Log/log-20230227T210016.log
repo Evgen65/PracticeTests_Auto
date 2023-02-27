@@ -1,0 +1,6 @@
+21:00:21 INFO  manager.ApplicationManager - Start test testLoginNegativeEmail
+21:00:22 INFO  manager.ApplicationManager - Stop test testLoginNegativeEmail
+21:00:22 INFO  manager.ApplicationManager - Start test testLoginNegativePass
+21:00:22 INFO  manager.ApplicationManager - Stop test testLoginNegativePass
+21:00:22 INFO  manager.ApplicationManager - Start test testLoginPositive
+21:00:23 INFO  manager.ApplicationManager - Stop test testLoginPositive

@@ -1,0 +1,3 @@
+17:10:36 INFO  manager.ApplicationManager - Test on CHROME
+17:10:39 INFO  manager.ApplicationManager - Start test testLoginPositive
+17:10:40 INFO  manager.ApplicationManager - Stop test testLoginPositive

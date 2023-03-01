@@ -7,11 +7,18 @@ version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+    maven {
+        url 'https://repo.clojars.org'
+        name 'Clojars'
+    }
 }
 
 dependencies {
     implementation 'org.testng:testng:7.4.0'
     implementation "org.seleniumhq.selenium:selenium-java:3.141.59"
+    implementation 'com.redhat.qe:testng-listeners:1.0.6'
+    implementation 'com.senzing:senzing-listener:0.1.0'
+    implementation 'io.github.vladcar:simple-sqs-listener:2.0.2'
 
     compileOnly 'org.projectlombok:lombok:1.18.24'
     annotationProcessor 'org.projectlombok:lombok:1.18.24'

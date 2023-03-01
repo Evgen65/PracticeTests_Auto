@@ -12,19 +12,21 @@ public class HelperUser extends HelperBase {
     }
 
 
-    public void openLoginRegistrationForm() {
+    public void openLoginRegistrationFormFirstWay() {
         click(By.xpath("//div[text()='Sign in']"));
+    }
+    public void openLoginRegistrationFormSecondWay() {click(By.xpath("//span[text()='join']"));
     }
 
     public void fillLoginForm(User user) {
         type(By.xpath("//input[@placeholder='peter@gmail.com']"), user.getEmail());
         type(By.xpath("//input[@type='password']"), user.getPassword());
     }
-    public void submitLogin() {
+    public void submit() {
         click(By.xpath("//div[.='Submit']"));
     }
 
-    public void closeLoginForm() {
+    public void closeLoginRegistrationForm() {
         click(By.xpath("//div[text()='Cancel']"));
     }
 
@@ -34,5 +36,24 @@ public class HelperUser extends HelperBase {
 
     public String getTextErrorLogin() {
         return getText(By.xpath("//div[text()='Submit']"));
+    }
+
+    public void logout() {click(By.xpath("//div[.='Logout']"));
+    }
+
+    public void fillRegistrationForm(User user) {
+        type(By.xpath("//input[@placeholder='Peter']"), user.getName());
+        type(By.xpath("//input[@placeholder='peter@gmail.com']"), user.getEmail());
+        type(By.xpath("//input[@type='password']"), user.getPassword());
+        type(By.xpath("(//input[@type='password'])[2]"), user.getPassword());
+    }
+
+
+    public void crossToSignUpForm() {
+        click(By.xpath("//div[.='Sign up']"));
+    }
+
+    public String getTextExistUser() {
+        return getText(By.xpath("//div[text()='User with this email already exists']"));
     }
 }

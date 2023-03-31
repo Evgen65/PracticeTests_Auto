@@ -9,25 +9,33 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
-    Logger logger= LoggerFactory.getLogger(ApplicationManager.class);
+    Logger logger = LoggerFactory.getLogger(ApplicationManager.class);
 
     WebDriver wd;
     HelperUser user;
+    HelperPets pets;
+    HelperContact contact;
+
     String browser;
     Properties properties;
+
     public ApplicationManager(String browser) {
 
         this.browser = browser;
-        properties =new Properties();
+        properties = new Properties();
     }
-   public void init()  {
+
+    public void init() {
         wd = new ChromeDriver();
 
         wd.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         wd.navigate().to("https://propetscom.herokuapp.com/");
         wd.manage().window().maximize();
+        pets = new HelperPets(wd);
         user = new HelperUser(wd);
+        contact=new HelperContact(wd);
     }
+
     public void stop() {
         //  wd.close();
         //  wd.quit();
@@ -37,6 +45,13 @@ public class ApplicationManager {
         return user;
     }
 
+    public HelperPets getPet() {
+        return pets;
+    }
+
+    public HelperContact getContact() {
+        return contact;
+    }
 
 
 }

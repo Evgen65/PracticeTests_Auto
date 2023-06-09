@@ -19,6 +19,7 @@ dependencies {
     implementation 'com.redhat.qe:testng-listeners:1.0.6'
     implementation 'com.senzing:senzing-listener:0.1.0'
     implementation 'io.github.vladcar:simple-sqs-listener:2.0.2'
+    testImplementation 'org.testng:testng:7.1.0'
 
     compileOnly 'org.projectlombok:lombok:1.18.24'
     annotationProcessor 'org.projectlombok:lombok:1.18.24'
